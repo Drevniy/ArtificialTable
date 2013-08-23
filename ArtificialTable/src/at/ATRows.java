@@ -2,6 +2,7 @@ package at;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.GridLayout;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -13,7 +14,7 @@ public class ATRows extends JPanel
 {
 	public ATRows()
 	{
-		
+		setLayout(new GridLayout(1, 4));
 		for (int i = 0; i < 4; i++)
 		{
 			JTextField txt = new JTextField();
