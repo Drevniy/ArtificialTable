@@ -14,14 +14,16 @@ import javax.swing.ScrollPaneConstants;
 
 public class ATFrame extends JFrame
 {
+	static JPanel jpRows;
 	public ATFrame()
 	{
 		setBounds(320, 200, 600, 400);
 		
-		JPanel jpRows = new JPanel();
-		jpRows.setPreferredSize(new Dimension(600, 200));
+		jpRows = new JPanel();
+		
+		jpRows.setPreferredSize(new Dimension(500, 200));
 		JScrollPane scroll = new  JScrollPane(jpRows);
-		scroll.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+		
 		jpRows.add(new ATRows());
 		
 		
@@ -30,7 +32,7 @@ public class ATFrame extends JFrame
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		add(new ATFieldPanel(),BorderLayout.NORTH);
 		add(scroll, BorderLayout.CENTER);
-		add(new ATButtonPanel(jpRows), BorderLayout.SOUTH);
+		add(new ATButtonPanel(this), BorderLayout.SOUTH);
 		setVisible(true);
 	}
 }
